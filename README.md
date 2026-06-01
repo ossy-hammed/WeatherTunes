@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/28449946/README.md)
 # 🌦️🎵 WeatherTunes
 
 > The weather outside becomes your personal DJ.  
