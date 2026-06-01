@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeatherTunes 🌦️🎵</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>WeatherTunes</h1>
+      <p>Let the weather pick your playlist.</p>
+    </header>
+
+    <main>
+      <!-- Loading state -->
+      <div id="loading" class="card">
+        <div class="spinner"></div>
+        <p>Detecting your vibe…</p>
+      </div>
+
+      <!-- Weather card (hidden initially) -->
+      <div id="weatherCard" class="card hidden">
+        <div class="weather-icon" id="weatherIcon">☀️</div>
+        <div class="temp" id="temperature">--°C</div>
+        <div class="condition" id="condition">Clear Sky</div>
+        <div class="vibe">
+          <span id="vibeLabel">Today’s Vibe:</span>
+          <strong id="vibeText">Sunny Indie</strong>
+        </div>
+        <div class="actions">
+          <a id="spotifyBtn" href="#" target="_blank" class="btn spotify">
+            🎧 Listen on Spotify
+          </a>
+          <a id="youtubeBtn" href="#" target="_blank" class="btn youtube">
+            ▶️ Play on YouTube
+          </a>
+        </div>
+        <p class="location-note" id="locationNote"></p>
+      </div>
+
+      <!-- Error fallback -->
+      <div id="errorCard" class="card hidden">
+        <p>😵 Could not fetch weather. Please allow location access or try again later.</p>
+        <button id="retryBtn" class="btn retry">Try Again</button>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

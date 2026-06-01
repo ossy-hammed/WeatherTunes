@@ -1,0 +1,171 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --text: #ffffff;
+  --accent1: #f093fb;
+  --accent2: #f5576c;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  padding: 1rem;
+  transition: background 0.8s ease;
+}
+
+/* Weather‑dependent backgrounds (set by JS) */
+body.clear { background: linear-gradient(135deg, #f5af19, #f12711); }
+body.cloudy { background: linear-gradient(135deg, #bdc3c7, #2c3e50); }
+body.rain { background: linear-gradient(135deg, #373b44, #4286f4); }
+body.snow { background: linear-gradient(135deg, #e6dada, #274046); }
+body.fog { background: linear-gradient(135deg, #bdc3c7, #bdc3c7); }
+body.drizzle { background: linear-gradient(135deg, #89f7fe, #66a6ff); }
+body.default { background: linear-gradient(135deg, #667eea, #764ba2); }
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  display: inline-block;
+  box-shadow: var(--shadow);
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Loading spinner */
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.weather-icon {
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+}
+
+.temp {
+  font-size: 3.5rem;
+  font-weight: 200;
+  line-height: 1;
+}
+
+.condition {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.vibe {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.vibe strong {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.spotify {
+  background: #1DB954;
+}
+
+.youtube {
+  background: #FF0000;
+}
+
+.retry {
+  background: rgba(255, 255, 255, 0.3);
+  margin: 1rem auto 0;
+  width: auto;
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+}
+
+.location-note {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
